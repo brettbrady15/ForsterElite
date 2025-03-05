@@ -35,7 +35,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Latest News */}
+      {/* Latest News
       <section className="bg-muted py-16 md:py-24">
         <div className="container">
           <div className="mb-12 text-center">
@@ -80,7 +80,7 @@ export default function HomePage() {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Upcoming Races */}
       <section className="py-16 md:py-24">
@@ -91,9 +91,9 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[
-              { date: "June 15, 2023", title: "Diamond League Paris", location: "Paris, France" },
-              { date: "July 2, 2023", title: "National Championships", location: "Eugene, Oregon" },
-              { date: "July 23, 2023", title: "World Athletics Championships", location: "Budapest, Hungary" },
+              { date: "March 22, 2025", title: "CISM World Military Games", location: "Lucerne, Switzerland" },
+              { date: "April 4, 2025", title: "Pepsi Relays", location: "Gainesville, Florida" },
+              { date: "May 30-31, 2025", title: "Music City Track Festival", location: "Nashville, Tennessee" },
             ].map((race, i) => (
               <div key={i} className="rounded-lg border bg-background p-6 shadow-sm transition-all hover:shadow-md">
                 <div className="flex items-center gap-4">

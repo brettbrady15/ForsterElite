@@ -7,11 +7,11 @@ export function SiteFooter() {
   return (
     <footer className="bg-muted">
       <div className="container py-12 md:py-16">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div className="space-y-4">
             <h3 className="text-lg font-bold">Forster Elite</h3>
             <p className="text-sm text-muted-foreground">
-              Professional running team pushing the boundaries of human potential.
+              Elite Running. Coached by Mia Forster.
             </p>
             <div className="flex space-x-4">
               <Button variant="ghost" size="icon" asChild>
@@ -66,26 +66,6 @@ export function SiteFooter() {
               </Link>
               <Link href="/contact" className="hover:underline">
                 Contact
-              </Link>
-            </nav>
-          </div>
-          <div className="space-y-4">
-            <h3 className="text-sm font-bold">Resources</h3>
-            <nav className="flex flex-col space-y-2 text-sm">
-              <Link href="#" className="hover:underline">
-                Training Tips
-              </Link>
-              <Link href="#" className="hover:underline">
-                Nutrition
-              </Link>
-              <Link href="#" className="hover:underline">
-                Recovery
-              </Link>
-              <Link href="#" className="hover:underline">
-                Race Preparation
-              </Link>
-              <Link href="#" className="hover:underline">
-                Gear Reviews
               </Link>
             </nav>
           </div>

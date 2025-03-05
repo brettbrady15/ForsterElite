@@ -156,59 +156,7 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
-              <div className="mt-12 overflow-hidden rounded-lg border">
-                <div className="aspect-video w-full">
-                  {/* Replace with actual Google Maps embed */}
-                  <div className="flex h-full w-full items-center justify-center bg-muted">
-                    <p className="text-center text-muted-foreground">Google Maps Embed</p>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="bg-muted py-16 md:py-24">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight">Frequently Asked Questions</h2>
-            <p className="mt-4 text-lg text-muted-foreground">Find answers to common questions about our team</p>
-          </div>
-          <div className="mx-auto mt-12 max-w-3xl space-y-6">
-            {[
-              {
-                question: "How can I join the Swift Stride team?",
-                answer:
-                  "We're always looking for talented athletes. Please use our contact form to inquire about tryouts and recruitment opportunities. Include your personal records and competition history in your message.",
-              },
-              {
-                question: "Do you offer sponsorship opportunities?",
-                answer:
-                  "Yes, we partner with brands that align with our values. For sponsorship inquiries, please email sponsorship@swiftstrideteam.com with details about your company and partnership goals.",
-              },
-              {
-                question: "Can I interview team members for media coverage?",
-                answer:
-                  "We welcome media coverage. Please contact our media relations team at media@swiftstrideteam.com with your request, including the publication you represent and your deadline.",
-              },
-              {
-                question: "Do you offer training camps or clinics?",
-                answer:
-                  "We host several training camps and clinics throughout the year. Sign up for our newsletter to be notified when registration opens for these events.",
-              },
-              {
-                question: "How can I purchase team merchandise?",
-                answer:
-                  "All official team merchandise is available in our online shop. We ship internationally and offer various payment options.",
-              },
-            ].map((faq, i) => (
-              <div key={i} className="rounded-lg border bg-background p-6">
-                <h3 className="text-lg font-bold">{faq.question}</h3>
-                <p className="mt-2 text-muted-foreground">{faq.answer}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>

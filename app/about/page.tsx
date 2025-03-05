@@ -103,29 +103,23 @@ export default function AboutPage() {
               Meet the experts who guide our athletes to peak performance
             </p>
           </div>
-          <div className="grid gap-8 md:grid-cols-3">
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="group overflow-hidden rounded-lg bg-background shadow-sm transition-all hover:shadow-md"
-              >
-                <div className="relative h-64 w-full overflow-hidden">
-                  <Image
-                    src={`/placeholder.svg?height=400&width=300&text=Coach ${i}`}
-                    alt={`Coach ${i}`}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold">Coach Name</h3>
-                  <p className="text-sm text-muted-foreground">Head Coach / Distance Specialist</p>
-                  <p className="mt-4 text-muted-foreground">
-                    Former Olympic athlete with 15+ years of coaching experience at the elite level.
-                  </p>
-                </div>
+          <div className="mx-auto max-w-md">
+            <div className="group overflow-hidden rounded-lg bg-background shadow-sm transition-all hover:shadow-md">
+              <div className="relative h-64 w-full overflow-hidden">
+                <Image
+                  src="/placeholder.svg?height=400&width=300&text=Mia Forster"
+                  alt="Mia Forster"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
               </div>
-            ))}
+              <div className="p-6">
+                <h3 className="text-xl font-bold">Mia Forster</h3>
+                <p className="text-sm text-muted-foreground">Head Coach / Distance Specialist</p>
+                <p className="mt-4 text-muted-foreground">
+                  Example bio goes here.                 </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
