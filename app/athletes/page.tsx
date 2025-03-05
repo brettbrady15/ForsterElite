@@ -5,7 +5,7 @@ import { Award, Medal, Trophy, MapPin } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import "flag-icons/css/flag-icons.min.css"
-import { useEffect, useRef, useState } from "react"
+import { useState, useEffect } from "react"
 
 // Create custom pin icon outside of component
 // const createCustomPin = () => L.divIcon({
@@ -19,7 +19,8 @@ import { useEffect, useRef, useState } from "react"
 // });
 
 export default function AthletesPage() {
-  const mapRef = useRef<L.Map | null>(null);
+  // Remove mapRef and all related code
+  // const mapRef = useRef<L.Map | null>(null);
 
   // Fix for Leaflet marker icons in Next.js
   // useEffect(() => {
