@@ -5,107 +5,104 @@ import { Award, Medal, Trophy, MapPin } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import "flag-icons/css/flag-icons.min.css"
-import { useEffect, useRef } from "react"
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
+import { useEffect, useRef, useState } from "react"
 
 // Create custom pin icon outside of component
-const createCustomPin = () => L.divIcon({
-  className: "bg-transparent",
-  html: `<svg width="24" height="36" viewBox="0 0 24 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 24 12 24s12-15 12-24c0-6.63-5.37-12-12-12zm0 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z" fill="#15803d"/>
-  </svg>`,
-  iconSize: [24, 36],
-  iconAnchor: [12, 36],
-  popupAnchor: [0, -36]
-});
+// const createCustomPin = () => L.divIcon({
+//   className: "bg-transparent",
+//   html: `<svg width="24" height="36" viewBox="0 0 24 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+//     <path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 24 12 24s12-15 12-24c0-6.63-5.37-12-12-12zm0 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z" fill="#15803d"/>
+//   </svg>`,
+//   iconSize: [24, 36],
+//   iconAnchor: [12, 36],
+//   popupAnchor: [0, -36]
+// });
 
 export default function AthletesPage() {
   const mapRef = useRef<L.Map | null>(null);
 
   // Fix for Leaflet marker icons in Next.js
-  useEffect(() => {
-    delete (L.Icon.Default.prototype as any)._getIconUrl;
-    L.Icon.Default.mergeOptions({
-      iconRetinaUrl: '',
-      iconUrl: '',
-      shadowUrl: ''
-    });
-  }, []);
+  // useEffect(() => {
+  //   delete (L.Icon.Default.prototype as any)._getIconUrl;
+  //   L.Icon.Default.mergeOptions({
+  //     iconRetinaUrl: '',
+  //     iconUrl: '',
+  //     shadowUrl: ''
+  //   });
+  // }, []);
 
   // Map initialization effect
-  useEffect(() => {
-    if (typeof window !== 'undefined' && !mapRef.current) {
-      const map = L.map('map').setView([39.8283, -98.5795], 4);
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined' && !mapRef.current) {
+  //     const map = L.map('map').setView([39.8283, -98.5795], 4);
       
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '© OpenStreetMap contributors'
-      }).addTo(map);
+  //     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  //       maxZoom: 19,
+  //       attribution: '© OpenStreetMap contributors'
+  //     }).addTo(map);
 
-      const locations = [
-        {
-          name: 'EKU - Richmond, KY',
-          coords: [37.7358, -84.2946],
-          athletes: 'Brandon Olden, Niko Dworczi'
-        },
-        {
-          name: 'Pensacola, FL',
-          coords: [30.4213, -87.2169],
-          athletes: 'Brett Brady'
-        },
-        {
-          name: 'Colorado Springs, CO',
-          coords: [38.8339, -104.8214],
-          athletes: 'Jackson Siddall'
-        }
-      ];
+  //     const locations = [
+  //       {
+  //         name: 'EKU - Richmond, KY',
+  //         coords: [37.7358, -84.2946],
+  //         athletes: 'Brandon Olden, Niko Dworczi'
+  //       },
+  //       {
+  //         name: 'Pensacola, FL',
+  //         coords: [30.4213, -87.2169],
+  //         athletes: 'Brett Brady'
+  //       },
+  //       {
+  //         name: 'Colorado Springs, CO',
+  //         coords: [38.8339, -104.8214],
+  //         athletes: 'Jackson Siddall'
+  //       }
+  //     ];
 
-      // Create the custom pin icon
-      const customPin = createCustomPin();
+  //     // Create the custom pin icon
+  //     const customPin = createCustomPin();
 
-      // Add markers to the map
-      locations.forEach(location => {
-        L.marker(location.coords as L.LatLngExpression, { icon: customPin })
-          .bindPopup(`
-            <div class="text-sm">
-              <h3 class="font-bold">${location.name}</h3>
-              <p>${location.athletes}</p>
-            </div>
-          `)
-          .addTo(map);
-      });
+  //     // Add markers to the map
+  //     locations.forEach(location => {
+  //       L.marker(location.coords as L.LatLngExpression, { icon: customPin })
+  //         .bindPopup(`
+  //           <div class="text-sm">
+  //             <h3 class="font-bold">${location.name}</h3>
+  //             <p>${location.athletes}</p>
+  //           </div>
+  //         `)
+  //         .addTo(map);
+  //     });
 
-      // Set bounds to continental US
-      map.setMaxBounds([
-        [24.396308, -125.000000], // Southwest coordinates
-        [49.384358, -66.934570]   // Northeast coordinates
-      ]);
+  //     // Set bounds to continental US
+  //     map.setMaxBounds([
+  //       [24.396308, -125.000000], // Southwest coordinates
+  //       [49.384358, -66.934570]   // Northeast coordinates
+  //     ]);
 
-      // Store map instance in ref
-      mapRef.current = map;
+  //     // Store map instance in ref
+  //     mapRef.current = map;
 
-      // Cleanup function
-      return () => {
-        map.remove();
-        mapRef.current = null;
-      };
-    }
-  }, []);
+  //     // Cleanup function
+  //     return () => {
+  //       map.remove();
+  //       mapRef.current = null;
+  //     };
+  //   }
+  // }, []);
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[40vh] w-full overflow-hidden bg-green-900">
+      {/* Hero Section - Same structure as home page */}
+      <section className="relative w-full h-[40vh] -mt-16 overflow-hidden">
         <Image
-          src="/placeholder.svg?height=600&width=1920"
-          alt="Team athletes"
+          src="https://images.unsplash.com/photo-1542577268-f027c64c871b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBpbmUlMjBmb3Jlc3R8ZW58MHx8MHx8fDA%3D"
+          alt="background"
           fill
-          className="object-cover opacity-70"
+          className="object-cover opacity-80"
           priority
         />
-        <div className="absolute inset-0 bg-green-900/60" />
-        <div className="container relative z-10 flex h-full flex-col items-center justify-center text-center text-white">
+        <div className="container relative z-10 flex h-full flex-col items-center justify-center text-center text-white pt-16">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">Our Athletes</h1>
           <p className="mt-4 max-w-2xl text-xl">Meet the elite runners who represent Forester Elite</p>
         </div>
@@ -220,21 +217,6 @@ export default function AthletesPage() {
                 </Button>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Training Locations Map */}
-      <section className="py-16 md:py-24 bg-muted">
-        <div className="container">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Training Locations</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Where our elite athletes train across the United States
-            </p>
-          </div>
-          <div className="relative h-[500px] w-full overflow-hidden rounded-lg border">
-            <div id="map" className="h-full w-full" />
           </div>
         </div>
       </section>

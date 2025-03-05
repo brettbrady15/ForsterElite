@@ -6,18 +6,17 @@ import Link from "next/link"
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[80vh] w-full overflow-hidden bg-green-900">
+      {/* Hero Section - Note the negative margin-top to pull it up behind the header */}
+      <section className="relative w-full h-screen -mt-16 overflow-hidden">
         <Image
-          src="/placeholder.svg?height=1080&width=1920"
-          alt="Running team in action"
+          src="https://images.unsplash.com/photo-1542577268-f027c64c871b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBpbmUlMjBmb3Jlc3R8ZW58MHx8MHx8fDA%3D"
+          alt="background"
           fill
           className="object-cover opacity-80"
           priority
         />
-        <div className="absolute inset-0 bg-green-900/50" />
-        <div className="container relative z-10 flex h-full flex-col items-center justify-center text-center text-white">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">FORSTER ELITE</h1>
+        <div className="container relative z-10 flex h-full flex-col items-center justify-center text-center text-white pt-16">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">FORSTER ELITE</h1>
           <p className="mt-4 max-w-2xl text-xl sm:text-2xl">Pushing the boundaries of human potential</p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Button size="lg" asChild>
