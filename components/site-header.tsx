@@ -63,7 +63,7 @@ export function SiteHeader() {
           </Link>
         </nav>
         <div className="flex items-center gap-2">
-          <Button variant="secondary" size="sm" asChild className="hidden md:flex bg-green-900/80 hover:bg-green-900">
+          <Button variant="secondary" size="sm" asChild className="hidden md:flex bg-gray-700 hover:bg-gray-600 text-white">
             <Link href="/contact">Join Us</Link>
           </Button>
           <Sheet>
