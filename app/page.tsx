@@ -127,8 +127,8 @@ export default function HomePage() {
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Our Sponsors</h2>
             <p className="mt-4 text-xl text-muted-foreground">Proud partners who support our journey</p>
           </div>
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-6">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-4">
+            {[1, 2, 3, 4].map((i) => (
               <div key={i} className="flex items-center justify-center">
                 <Image
                   src={`/placeholder.svg?height=80&width=160&text=Sponsor ${i}`}

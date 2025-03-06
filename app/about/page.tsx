@@ -23,35 +23,11 @@ export default function AboutPage() {
             <div>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Our Story</h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                Founded in 2015, Forster Elite was born from a vision to create a professional running team that
-                nurtures talent, pushes boundaries, and inspires the next generation of athletes.
+                Founded in 2024, Forster Elite was born from a vision to create an elite running group that
+                nurtures talent, pushes boundaries, and inspires the next generation of runners.
               </p>
-              <p className="mt-4 text-lg text-muted-foreground">
-                What started as a small group of dedicated runners has grown into one of the most respected professional
-                teams in the sport, with athletes competing at the highest levels internationally.
-              </p>
-              <div className="mt-8 grid grid-cols-2 gap-4">
-                <div className="rounded-lg border p-4">
-                  <Trophy className="h-8 w-8 text-primary" />
-                  <p className="mt-2 text-2xl font-bold">75+</p>
-                  <p className="text-sm text-muted-foreground">National Titles</p>
-                </div>
-                <div className="rounded-lg border p-4">
-                  <Award className="h-8 w-8 text-primary" />
-                  <p className="mt-2 text-2xl font-bold">12</p>
-                  <p className="text-sm text-muted-foreground">Olympic Medals</p>
-                </div>
-                <div className="rounded-lg border p-4">
-                  <Clock className="h-8 w-8 text-primary" />
-                  <p className="mt-2 text-2xl font-bold">18</p>
-                  <p className="text-sm text-muted-foreground">World Records</p>
-                </div>
-                <div className="rounded-lg border p-4">
-                  <Users className="h-8 w-8 text-primary" />
-                  <p className="mt-2 text-2xl font-bold">24</p>
-                  <p className="text-sm text-muted-foreground">Elite Athletes</p>
-                </div>
-              </div>
+
+
             </div>
             <div className="relative h-[500px] overflow-hidden rounded-lg">
               <Image src="/placeholder.svg?height=500&width=800" alt="Team training" fill className="object-cover" />
@@ -134,7 +110,7 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4">
-            {Array.from({ length: 8 }).map((_, i) => (
+            {Array.from({ length: 4 }).map((_, i) => (
               <div key={i} className="flex flex-col items-center justify-center rounded-lg border p-6 text-center">
                 <Image
                   src={`/placeholder.svg?height=80&width=160&text=Sponsor ${i + 1}`}
