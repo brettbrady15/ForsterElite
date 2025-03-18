@@ -1,5 +1,4 @@
 import { format, isBefore, isAfter, parseISO } from 'date-fns';
-import { getMeetImageUrl, getAthleteImageUrl } from '../utils/images';
 
 // Define types for our meet data
 export interface Athlete {
@@ -43,7 +42,7 @@ export const athletes: Athlete[] = [
     countryCode: 'us',
     country: 'United States',
     location: 'EKU - Richmond, KY',
-    photoUrl: getAthleteImageUrl('brandon-olden'),
+    photoUrl: '/athletes/Olden_Brandon.png',
     bio: "Brandon, currently a coach at Eastern Kentucky University and a graduate of Tennessee and Siena, is an elite competitor with two NCAA Division I East Regional appearances in track. He holds personal bests of 13:42 for the 5k, 7:56 for the 3k, and 28:30 for the 10k. Brandon's combination of coaching expertise and competitive success makes him a key asset to the program. He is based in Richmond, KY.",
     personalBests: {
       "3k": "7:56",
@@ -58,7 +57,7 @@ export const athletes: Athlete[] = [
     countryCode: 'us',
     country: 'United States',
     location: 'Colorado Springs, CO',
-    photoUrl: getAthleteImageUrl('jackson-siddall'),
+    photoUrl: '/athletes/Siddall_Jackson.jpg',
     bio: "An accomplished graduate of Eastern Kentucky University, Jackson placed 8th at the USATF 10k Road Championships and 24th at the USATF Half Marathon Championships. His personal bests include 7:59 for the 3k, 29:03 for the 10k, and 63:23 for the half marathon. Jackson balances his athletic pursuits with a full-time career as a sixth-grade teacher and a part-time position at a local running store. He resides and trains in Colorado Springs, Colorado.",
     personalBests: {
       "3k": "7:59",
@@ -73,7 +72,7 @@ export const athletes: Athlete[] = [
     countryCode: 'us',
     country: 'United States',
     location: 'Pensacola, FL',
-    photoUrl: getAthleteImageUrl('brett-brady'),
+    photoUrl: '/athletes/Brady_brett.png',
     bio: "A standout athlete with an impressive resume, Brett qualified for the CISM Winter World Military Games and spent four years at the U.S. Naval Academy before completing a graduate year at the University of Tennessee. He boasts personal bests of 8:52 in the 3k steeplechase, 23:55 in the 8k cross country, and 45:51 in the 15k. His achievements include winning a prestigious Patriot League title in the steeplechase, showcasing his versatility and competitive edge across multiple distances. As he continues his elite running career, he continues his service as an officer in the Navy.",
     personalBests: {
       "3k Steeplechase": "8:52",
@@ -88,7 +87,7 @@ export const athletes: Athlete[] = [
     countryCode: 'pl',
     country: 'Poland',
     location: 'EKU - Richmond, KY',
-    photoUrl: getAthleteImageUrl('niko-dworczi'),
+    photoUrl: '/athletes/Niko.png',
     bio: "Niko, also coaching at Eastern Kentucky University, has competed at the highest collegiate level with an appearance at the NCAA Division I Nationals in the 10k. His personal bests include 7:59 for the 3k, 13:51 for the 5k, 28:48 for the 10k, and 64:03 for the half marathon. Niko's experience at the national level and his deep understanding of the sport make him a valuable member of the coaching staff. He is based in Richmond, KY.",
     personalBests: {
       "3k": "7:59",
@@ -107,7 +106,7 @@ export const meets: Meet[] = [
     title: 'Portland Track Festival',
     location: 'Portland, Oregon',
     description: 'Premier track festival hosted in Portland, Oregon.',
-    imageUrl: getMeetImageUrl('portland-track-festival'),
+    imageUrl: 'public/meets/portlandTC.jpg',
     athleteIds: ['brandon-olden', 'jackson-siddall', 'brett-brady','niko-dworczi'],
     websiteUrl: 'https://www.portlandtrackfestival.com'
   },
@@ -117,7 +116,7 @@ export const meets: Meet[] = [
     title: 'Princeton Last Chance',
     location: 'Princeton, New Jersey',
     description: 'Last Chance Track Meet.',
-    imageUrl: getMeetImageUrl('PU-LC'),
+    imageUrl: 'public/meets/princeton.png',
     athleteIds: ['brett-brady', 'niko-dworczi'],
     websiteUrl: 'https://www.princetontrack.com'
   },
@@ -127,7 +126,7 @@ export const meets: Meet[] = [
     title: 'Music City Track Festival',
     location: 'Nashville, Tennessee',
     description: 'Premier track and field event in Nashville.',
-    imageUrl: getMeetImageUrl('MCTC'),
+    imageUrl: 'public/meets/MCTC.png',
     athleteIds: ['brandon-olden', 'jackson-siddall', 'brett-brady'],
     websiteUrl: 'https://www.musiccitytrackfestival.com'
   },
@@ -137,7 +136,7 @@ export const meets: Meet[] = [
     title: 'Lee University Last Chance',
     location: 'Cleveland, Tennessee',
     description: 'Last chance qualifier meet for championships.',
-    imageUrl: getMeetImageUrl('lee-university-last-chance'),
+    imageUrl: '/meets/leeU.png',
     athleteIds: ['brandon-olden', 'brett-brady', 'niko-dworczi'],
     websiteUrl: 'https://www.leeuniversity.edu'
   },
@@ -148,7 +147,7 @@ export const meets: Meet[] = [
     title: 'Cow Harbor 10K',
     location: 'Northport, New York',
     description: 'Elite road race through the scenic hills of Northport.',
-    imageUrl: getMeetImageUrl('cow-harbor-10k'),
+    imageUrl: 'public/meets/cowharbor2.jpg',
     athleteIds: ['jackson-siddall', 'brandon-olden', 'brett-brady', 'niko-dworczi'],
     websiteUrl: 'https://www.cowharbor10k.com'
   },
@@ -158,7 +157,7 @@ export const meets: Meet[] = [
     title: 'Marine Corps Marathon',
     location: 'Washington, D.C.',
     description: 'One of the largest marathons in the US.',
-    imageUrl: getMeetImageUrl('marine-corps-marathon'),
+    imageUrl: 'public/meets/MCM.png',
     athleteIds: ['brett-brady'],
     websiteUrl: 'https://www.marinemarathon.com'
   },
@@ -168,7 +167,7 @@ export const meets: Meet[] = [
     title: 'Indianapolis Monumental Marathon',
     location: 'Indianapolis, Indiana',
     description: 'Elite half=marathon focused on fast times.',
-    imageUrl: getMeetImageUrl('indy-monumnet'),
+    imageUrl: 'public/meets/indymonumental.jpg',
     athleteIds: ['brandon-olden', 'jackson-siddall', 'brett-brady','niko-dworczi'],
     websiteUrl: 'https://www.indymonumental.com'
   }
