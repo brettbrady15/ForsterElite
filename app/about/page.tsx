@@ -8,7 +8,7 @@ export default function AboutPage() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[50vh] w-full overflow-hidden">
-        <Image src="/placeholder.svg?height=800&width=1920" alt="Team photo" fill className="object-cover" priority />
+        <Image src="https://images.unsplash.com/photo-1474546652694-a33dd8161d66?q=80&w=2084&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Team photo" fill className="object-cover" priority />
         <div className="absolute inset-0 bg-black/50" />
         <div className="container relative z-10 flex h-full flex-col items-center justify-center text-center text-white">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">About Our Team</h1>
@@ -30,7 +30,7 @@ export default function AboutPage() {
 
             </div>
             <div className="relative h-[500px] overflow-hidden rounded-lg">
-              <Image src="/tree3.jpg" alt="Team Logo" fill className="object-cover" />
+              <Image src="/Tree3.png" alt="Team Logo" fill unoptimized className="object-cover" />
             </div>
           </div>
         </div>
@@ -56,6 +56,7 @@ export default function AboutPage() {
                     src="/athletes/mondo.png"
                     alt="Mia Forster"
                     fill
+                    unoptimized
                     className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>

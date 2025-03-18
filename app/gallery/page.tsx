@@ -8,8 +8,8 @@ export default function GalleryPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[40vh] w-full overflow-hidden">
-        <Image src="/placeholder.svg?height=600&width=1920" alt="Gallery" fill className="object-cover" priority />
+      <section className="relative w-full h-[40vh] -mt-16 overflow-hidden">
+        <Image src="/placeholder.svg?height=600&width=1920" alt="Gallery" fill unoptimized className="object-cover" priority />
         <div className="absolute inset-0 bg-black/50" />
         <div className="container relative z-10 flex h-full flex-col items-center justify-center text-center text-white">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">Gallery</h1>
