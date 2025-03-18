@@ -147,7 +147,7 @@ export const meets: Meet[] = [
     title: 'Cow Harbor 10K',
     location: 'Northport, New York',
     description: 'Elite road race through the scenic hills of Northport.',
-    imageUrl: '/meets/cowharbor.jfif',
+    imageUrl: '/meets/cowharbor.jpg',
     athleteIds: ['jackson-siddall', 'brandon-olden', 'brett-brady', 'niko-dworczi'],
     websiteUrl: 'https://www.cowharbor10k.com'
   },

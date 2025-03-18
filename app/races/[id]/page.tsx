@@ -36,6 +36,7 @@ export default function RacePage({ params }: RacePageProps) {
             alt={meet.title}
             fill
             priority
+            sizes="100vw"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
@@ -73,6 +74,7 @@ export default function RacePage({ params }: RacePageProps) {
                                   src={athlete.photoUrl || `/placeholder.svg?height=64&width=64&text=${athlete.name.charAt(0)}`}
                                   alt={athlete.name}
                                   fill
+                                  sizes="64px"
                                   className="object-cover"
                                 />
                               </div>
