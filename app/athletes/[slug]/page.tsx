@@ -61,11 +61,12 @@ export default function AthleteProfilePage({ params }: ProfileParams) {
               <div className="sticky top-24">
                 <div className="relative aspect-[3/4] overflow-hidden rounded-xl mb-6">
                   <Image
-                    src={athlete.photoUrl || `/placeholder.svg?height=600&width=400&text=${athlete.name}`}
+                    src={athlete.photoUrl || `/placeholder.svg?height=600&width=400&text=${athlete.name.charAt(0)}`}
                     alt={athlete.name}
                     fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    unoptimized
                     priority
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
                   />
                 </div>

@@ -35,7 +35,7 @@ export default function PastRacesPage() {
                         src={meet.imageUrl || `/placeholder.svg?height=300&width=400&text=${meet.location}`}
                         alt={meet.title}
                         fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        unoptimized
                         className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />

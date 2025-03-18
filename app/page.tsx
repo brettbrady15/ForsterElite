@@ -14,9 +14,10 @@ export default function HomePage() {
       <section className="relative w-full h-screen -mt-16 overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1542577268-f027c64c871b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBpbmUlMjBmb3Jlc3R8ZW58MHx8MHx8fDA%3D"
-          alt="background"
+          alt="Hero background"
           fill
-          className="object-cover opacity-80"
+          unoptimized
+          className="object-cover"
           priority
         />
         <div className="container relative z-10 flex h-full flex-col items-center justify-center text-center text-white pt-16">

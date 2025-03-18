@@ -57,7 +57,7 @@ export const athletes: Athlete[] = [
     countryCode: 'us',
     country: 'United States',
     location: 'Colorado Springs, CO',
-    photoUrl: '/athletes/Siddall_Jackson.jfif',
+    photoUrl: '/athletes/Siddall_Jackson.jpg',
     bio: "An accomplished graduate of Eastern Kentucky University, Jackson placed 8th at the USATF 10k Road Championships and 24th at the USATF Half Marathon Championships. His personal bests include 7:59 for the 3k, 29:03 for the 10k, and 63:23 for the half marathon. Jackson balances his athletic pursuits with a full-time career as a sixth-grade teacher and a part-time position at a local running store. He resides and trains in Colorado Springs, Colorado.",
     personalBests: {
       "3k": "7:59",
@@ -147,7 +147,7 @@ export const meets: Meet[] = [
     title: 'Cow Harbor 10K',
     location: 'Northport, New York',
     description: 'Elite road race through the scenic hills of Northport.',
-    imageUrl: '/meets/cowharbor.jpg',
+    imageUrl: '/meets/cowharbor2.jpg',
     athleteIds: ['jackson-siddall', 'brandon-olden', 'brett-brady', 'niko-dworczi'],
     websiteUrl: 'https://www.cowharbor10k.com'
   },

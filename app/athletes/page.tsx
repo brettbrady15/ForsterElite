@@ -35,10 +35,11 @@ export default function AthletesPage() {
               <div key={athlete.id} className="group overflow-hidden rounded-lg bg-background shadow-sm transition-all hover:shadow-md">
                 <div className="relative h-80 w-full overflow-hidden">
                   <Image
-                    src={athlete.photoUrl || `/placeholder.svg?height=400&width=300&text=${athlete.name}`}
+                    src={athlete.photoUrl || `/placeholder.svg?height=300&width=300&text=${athlete.name.charAt(0)}`}
                     alt={athlete.name}
                     fill
-                    className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                    unoptimized
+                    className="object-cover object-top transition-transform group-hover:scale-105"
                   />
                 </div>
                 <div className="p-4">
