@@ -9,12 +9,12 @@ export default function ContactPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[40vh] w-full overflow-hidden">
-        <Image src="/placeholder.svg?height=600&width=1920" alt="Contact us" fill className="object-cover" priority />
+      <section className="relative h-[40vh] w-full overflow-hidden">  
+        <Image src="https://images.unsplash.com/photo-1621269383095-d595ff5e8504?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Contact us" fill className="object-cover" priority />
         <div className="absolute inset-0 bg-black/50" />
         <div className="container relative z-10 flex h-full flex-col items-center justify-center text-center text-white">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">Contact Us</h1>
-          <p className="mt-4 max-w-2xl text-xl">Get in touch with the Swift Stride team</p>
+          <p className="mt-4 max-w-2xl text-xl">Get in touch with Forster Elite</p>
         </div>
       </section>
 
@@ -75,13 +75,15 @@ export default function ContactPage() {
                 <div className="flex items-start gap-4">
                   <MapPin className="mt-1 h-6 w-6 text-primary" />
                   <div>
-                    <h3 className="font-bold">Address</h3>
+                    <h3 className="font-bold">Training Locations</h3>
                     <p className="mt-1 text-muted-foreground">
-                      123 Training Lane
+                      Richmond, Kentucky
                       <br />
-                      Boulder, CO 80301
+                      Colorado Springs, Colorado
                       <br />
-                      United States
+                      Pensacola, Florida
+                      <br />
+                      More Coming Soon.
                     </p>
                   </div>
                 </div>
@@ -90,15 +92,11 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold">Email</h3>
                     <p className="mt-1 text-muted-foreground">
-                      info@swiftstrideteam.com
-                      <br />
-                      media@swiftstrideteam.com
-                      <br />
-                      sponsorship@swiftstrideteam.com
+                      info@forsterelite.com
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
+                {/* <div className="flex items-start gap-4">
                   <Phone className="mt-1 h-6 w-6 text-primary" />
                   <div>
                     <h3 className="font-bold">Phone</h3>
@@ -108,11 +106,11 @@ export default function ContactPage() {
                       Monday - Friday, 9am - 5pm MT
                     </p>
                   </div>
-                </div>
+                </div> */}
                 <div className="flex items-start gap-4">
                   <div className="mt-1 flex gap-2">
                     <Link
-                      href="https://instagram.com"
+                      href="https://www.instagram.com/forster.elite/"
                       target="_blank"
                       rel="noreferrer"
                       className="text-muted-foreground hover:text-primary"
@@ -120,7 +118,7 @@ export default function ContactPage() {
                       <Instagram className="h-6 w-6" />
                       <span className="sr-only">Instagram</span>
                     </Link>
-                    <Link
+                    {/* <Link
                       href="https://twitter.com"
                       target="_blank"
                       rel="noreferrer"
@@ -128,8 +126,8 @@ export default function ContactPage() {
                     >
                       <Twitter className="h-6 w-6" />
                       <span className="sr-only">Twitter</span>
-                    </Link>
-                    <Link
+                    </Link> */}
+                    {/* <Link
                       href="https://facebook.com"
                       target="_blank"
                       rel="noreferrer"
@@ -146,12 +144,12 @@ export default function ContactPage() {
                     >
                       <Youtube className="h-6 w-6" />
                       <span className="sr-only">YouTube</span>
-                    </Link>
+                    </Link> */}
                   </div>
                   <div>
-                    <h3 className="font-bold">Social Media</h3>
+                    <h3 className="font-bold">Instagram</h3>
                     <p className="mt-1 text-muted-foreground">
-                      Follow us on social media for daily updates, behind-the-scenes content, and race highlights.
+                      Follow us on Instagram for updates, behind-the-scenes content, and race highlights.
                     </p>
                   </div>
                 </div>

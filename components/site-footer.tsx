@@ -13,14 +13,14 @@ export function SiteFooter() {
             <p className="text-sm text-muted-foreground">
               Elite Running. Coached by Mia Forster.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex items-center space-x-4">
               <Button variant="ghost" size="icon" asChild>
-                <Link href="https://instagram.com" target="_blank" rel="noreferrer">
+                <Link href="https://www.instagram.com/forster.elite/" target="_blank" rel="noreferrer">
                   <Instagram className="h-5 w-5" />
                   <span className="sr-only">Instagram</span>
                 </Link>
               </Button>
-              <Button variant="ghost" size="icon" asChild>
+              {/* <Button variant="ghost" size="icon" asChild>
                 <Link href="https://twitter.com" target="_blank" rel="noreferrer">
                   <Twitter className="h-5 w-5" />
                   <span className="sr-only">Twitter</span>
@@ -37,7 +37,7 @@ export function SiteFooter() {
                   <Youtube className="h-5 w-5" />
                   <span className="sr-only">YouTube</span>
                 </Link>
-              </Button>
+              </Button> */}
             </div>
           </div>
           <div className="space-y-4">

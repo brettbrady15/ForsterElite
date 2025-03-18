@@ -32,11 +32,13 @@ export function SiteHeader() {
       }`}
     >
       <div className="container flex h-16 items-center justify-between">
+        {/* Forster Elite */}
         <Link href="/" className="flex items-center space-x-2">
           <Image src="/placeholder.svg?height=32&width=32" alt="Logo" width={32} height={32} />
           <span className="font-serif text-xl tracking-widest font-bold">FORSTER ELITE</span>
         </Link>
-        <nav className="hidden md:flex gap-6 px-4 py-2 rounded-full bg-black/20 backdrop-blur-sm">
+        {/* Bar */}
+        <nav className="hidden md:flex gap-6 px-4 py-2 rounded-full bg-black/20 backdrop-blur-sm absolute left-1/2 -translate-x-1/2">
           <Link href="/" className="text-sm font-medium transition-colors hover:text-white/80">
             Home
           </Link>
@@ -46,22 +48,23 @@ export function SiteHeader() {
           <Link href="/athletes" className="text-sm font-medium transition-colors hover:text-white/80">
             Athletes
           </Link>
-          <Link href="/news" className="text-sm font-medium transition-colors hover:text-white/80">
+          {/* <Link href="/news" className="text-sm font-medium transition-colors hover:text-white/80">
             News
-          </Link>
+          </Link> */}
           <Link href="/races" className="text-sm font-medium transition-colors hover:text-white/80">
             Races
           </Link>
-          <Link href="/gallery" className="text-sm font-medium transition-colors hover:text-white/80">
+          {/* <Link href="/gallery" className="text-sm font-medium transition-colors hover:text-white/80">
             Gallery
           </Link>
           <Link href="/shop" className="text-sm font-medium transition-colors hover:text-white/80">
             Shop
-          </Link>
+          </Link> */}
           <Link href="/contact" className="text-sm font-medium transition-colors hover:text-white/80">
             Contact
           </Link>
         </nav>
+        {/* Join Us */}
         <div className="flex items-center gap-2">
           <Button variant="secondary" size="sm" asChild className="hidden md:flex bg-gray-700 hover:bg-gray-600 text-white">
             <Link href="/contact">Join Us</Link>
@@ -84,18 +87,18 @@ export function SiteHeader() {
                 <Link href="/athletes" className="text-sm font-medium transition-colors hover:text-green-900">
                   Athletes
                 </Link>
-                <Link href="/news" className="text-sm font-medium transition-colors hover:text-green-900">
+                {/* <Link href="/news" className="text-sm font-medium transition-colors hover:text-green-900">
                   News
-                </Link>
+                </Link> */}
                 <Link href="/races" className="text-sm font-medium transition-colors hover:text-green-900">
                   Races
                 </Link>
-                <Link href="/gallery" className="text-sm font-medium transition-colors hover:text-green-900">
+                {/* <Link href="/gallery" className="text-sm font-medium transition-colors hover:text-green-900">
                   Gallery
                 </Link>
                 <Link href="/shop" className="text-sm font-medium transition-colors hover:text-green-900">
                   Shop
-                </Link>
+                </Link> */}
                 <Link href="/contact" className="text-sm font-medium transition-colors hover:text-green-900">
                   Contact
                 </Link>

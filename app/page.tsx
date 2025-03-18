@@ -2,8 +2,12 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Calendar, MapPin } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { getUpcomingMeets, formatMeetDate } from "@/lib/data/meets"
 
 export default function HomePage() {
+  // Get the first 3 upcoming meets for the homepage
+  const upcomingMeets = getUpcomingMeets().slice(0, 3);
+  
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section - Note the negative margin-top to pull it up behind the header */}
@@ -89,25 +93,21 @@ export default function HomePage() {
             <p className="mt-4 text-xl text-muted-foreground">Follow our athletes at these upcoming competitions</p>
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {[
-              { date: "March 22, 2025", title: "CISM World Military Games", location: "Lucerne, Switzerland" },
-              { date: "April 4, 2025", title: "Pepsi Relays", location: "Gainesville, Florida" },
-              { date: "May 30-31, 2025", title: "Music City Track Festival", location: "Nashville, Tennessee" },
-            ].map((race, i) => (
-              <div key={i} className="rounded-lg border bg-background p-6 shadow-sm transition-all hover:shadow-md">
+            {upcomingMeets.map((meet) => (
+              <div key={meet.id} className="rounded-lg border bg-background p-6 shadow-sm transition-all hover:shadow-md">
                 <div className="flex items-center gap-4">
                   <Calendar className="h-10 w-10 text-primary" />
                   <div>
-                    <p className="text-sm font-medium text-muted-foreground">{race.date}</p>
-                    <h3 className="text-xl font-bold">{race.title}</h3>
+                    <p className="text-sm font-medium text-muted-foreground">{formatMeetDate(meet.date)}</p>
+                    <h3 className="text-xl font-bold">{meet.title}</h3>
                   </div>
                 </div>
                 <div className="mt-4 flex items-center gap-2 text-muted-foreground">
                   <MapPin className="h-4 w-4" />
-                  <span>{race.location}</span>
+                  <span>{meet.location}</span>
                 </div>
                 <Button variant="outline" className="mt-6 w-full" asChild>
-                  <Link href="/races">View Details</Link>
+                  <Link href={`/races/${meet.id}`}>View Details</Link>
                 </Button>
               </div>
             ))}

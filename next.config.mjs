@@ -15,11 +15,39 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
   },
   experimental: {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
+    serverComponentsExternalPackages: ['bcrypt'],
+  },
+  webpack: (config, { isServer }) => {
+    // Add a rule to handle HTML files if needed
+    config.module.rules.push({
+      test: /\.html$/,
+      use: 'html-loader',
+    });
+    
+    // Prevent webpack from trying to bundle bcrypt on the client
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        bcrypt: false,
+        crypto: false,
+        fs: false,
+        os: false,
+        path: false,
+      };
+    }
+    
+    return config;
   },
 }
 
