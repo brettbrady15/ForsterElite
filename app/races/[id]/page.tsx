@@ -36,6 +36,7 @@ export default function RacePage({ params }: RacePageProps) {
             alt={meet.title}
             fill
             priority
+            unoptimized
             sizes="100vw"
             className="object-cover"
           />
@@ -74,6 +75,7 @@ export default function RacePage({ params }: RacePageProps) {
                                   src={athlete.photoUrl || `/placeholder.svg?height=64&width=64&text=${athlete.name.charAt(0)}`}
                                   alt={athlete.name}
                                   fill
+                                  unoptimized
                                   sizes="64px"
                                   className="object-cover"
                                 />
