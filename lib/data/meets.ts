@@ -106,7 +106,7 @@ export const meets: Meet[] = [
     title: 'Portland Track Festival',
     location: 'Portland, Oregon',
     description: 'Premier track festival hosted in Portland, Oregon.',
-    imageUrl: '/meets/portlandTC.jpg',
+    imageUrl: '/portlandTC.jpg',
     athleteIds: ['brandon-olden', 'jackson-siddall', 'brett-brady','niko-dworczi'],
     websiteUrl: 'https://www.portlandtrackfestival.com'
   },
@@ -116,7 +116,7 @@ export const meets: Meet[] = [
     title: 'Princeton Last Chance',
     location: 'Princeton, New Jersey',
     description: 'Last Chance Track Meet.',
-    imageUrl: '/meets/princeton.png',
+    imageUrl: '/princeton.png',
     athleteIds: ['brett-brady', 'niko-dworczi'],
     websiteUrl: 'https://www.princetontrack.com'
   },
@@ -126,7 +126,7 @@ export const meets: Meet[] = [
     title: 'Music City Track Festival',
     location: 'Nashville, Tennessee',
     description: 'Premier track and field event in Nashville.',
-    imageUrl: '/meets/MCTC.png',
+    imageUrl: '/MCTC.png',
     athleteIds: ['brandon-olden', 'jackson-siddall', 'brett-brady'],
     websiteUrl: 'https://www.musiccitytrackfestival.com'
   },
@@ -136,7 +136,7 @@ export const meets: Meet[] = [
     title: 'Lee University Last Chance',
     location: 'Cleveland, Tennessee',
     description: 'Last chance qualifier meet for championships.',
-    imageUrl: '/meets/leeU.png',
+    imageUrl: '/leeU.png',
     athleteIds: ['brandon-olden', 'brett-brady', 'niko-dworczi'],
     websiteUrl: 'https://www.leeuniversity.edu'
   },
@@ -147,7 +147,7 @@ export const meets: Meet[] = [
     title: 'Cow Harbor 10K',
     location: 'Northport, New York',
     description: 'Elite road race through the scenic hills of Northport.',
-    imageUrl: '/meets/cowharbor.jpg',
+    imageUrl: '/cowharbor.jpg',
     athleteIds: ['jackson-siddall', 'brandon-olden', 'brett-brady', 'niko-dworczi'],
     websiteUrl: 'https://www.cowharbor10k.com'
   },
@@ -157,7 +157,7 @@ export const meets: Meet[] = [
     title: 'Marine Corps Marathon',
     location: 'Washington, D.C.',
     description: 'One of the largest marathons in the US.',
-    imageUrl: '/meets/MCM.png',
+    imageUrl: '/MCM.png',
     athleteIds: ['brett-brady'],
     websiteUrl: 'https://www.marinemarathon.com'
   },
@@ -167,7 +167,7 @@ export const meets: Meet[] = [
     title: 'Indianapolis Monumental Marathon',
     location: 'Indianapolis, Indiana',
     description: 'Elite half=marathon focused on fast times.',
-    imageUrl: '/meets/indymonumental.jpg',
+    imageUrl: '/indymonumental.jpg',
     athleteIds: ['brandon-olden', 'jackson-siddall', 'brett-brady','niko-dworczi'],
     websiteUrl: 'https://www.indymonumental.com'
   }
