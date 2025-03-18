@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Calendar, ChevronRight, Filter, MapPin, Trophy } from "lucide-react"
 
-import { getPastMeets, formatMeetDate, getAthletesForMeet, getImageUrl } from "@/lib/data/meets"
+import { getPastMeets, formatMeetDate, getAthletesForMeet } from "@/lib/data/meets"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
@@ -32,10 +32,10 @@ export default function PastRacesPage() {
                   <Card className="h-full overflow-hidden transition-all hover:shadow-md">
                     <div className="relative h-48 overflow-hidden">
                       <Image
-                        src={meet.imageUrl ? getImageUrl(meet.imageUrl) : `/placeholder.svg?height=300&width=400&text=${meet.location}`}
+                        src={meet.imageUrl || `/placeholder.svg?height=300&width=400&text=${meet.location}`}
                         alt={meet.title}
                         fill
-                        unoptimized
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />

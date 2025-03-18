@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Calendar, MapPin, Trophy } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { getUpcomingMeets, getPastMeets, getAthletesForMeet, formatMeetDate, athletes, getImageUrl } from "@/lib/data/meets"
+import { getUpcomingMeets, getPastMeets, getAthletesForMeet, formatMeetDate, athletes } from "@/lib/data/meets"
 
 export default function RacesPage() {
   // Get upcoming and past meets using our utility functions
@@ -41,10 +41,10 @@ export default function RacesPage() {
                       <div className="grid md:grid-cols-[1fr_2fr]">
                         <div className="relative h-48 overflow-hidden md:h-auto">
                           <Image
-                            src={meet.imageUrl ? getImageUrl(meet.imageUrl) : `/placeholder.svg?height=300&width=400&text=${meet.location}`}
+                            src={meet.imageUrl || `/placeholder.svg?height=300&width=400&text=${meet.location}`}
                             alt={meet.title}
                             fill
-                            unoptimized
+                            sizes="(max-width: 768px) 100vw, 33vw"
                             className="object-cover transition-transform duration-300 group-hover:scale-105"
                           />
                         </div>
@@ -133,10 +133,10 @@ export default function RacesPage() {
                       <li key={meet.id} className="flex border-b pb-4 last:border-0 last:pb-0">
                         <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-md mr-3">
                           <Image
-                            src={meet.imageUrl ? getImageUrl(meet.imageUrl) : `/placeholder.svg?height=100&width=100&text=${meet.location}`}
+                            src={meet.imageUrl || `/placeholder.svg?height=100&width=100&text=${meet.location}`}
                             alt={meet.title}
                             fill
-                            unoptimized
+                            sizes="64px"
                             className="object-cover object-center"
                           />
                         </div>

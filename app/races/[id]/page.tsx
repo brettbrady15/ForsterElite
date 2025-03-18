@@ -4,7 +4,7 @@ import { notFound } from "next/navigation"
 import { Calendar, Globe, MapPin, Trophy, Users } from "lucide-react"
 import { parseISO } from "date-fns"
 
-import { formatMeetDate, getMeetById, getAthletesForMeet, getImageUrl } from "@/lib/data/meets"
+import { formatMeetDate, getMeetById, getAthletesForMeet } from "@/lib/data/meets"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
@@ -32,11 +32,11 @@ export default function RacePage({ params }: RacePageProps) {
       <section className="relative">
         <div className="relative h-[40vh] w-full overflow-hidden">
           <Image
-            src={meet.imageUrl ? getImageUrl(meet.imageUrl) : `/placeholder.svg?height=500&width=1200&text=${meet.title}`}
+            src={meet.imageUrl || `/placeholder.svg?height=500&width=1200&text=${meet.title}`}
             alt={meet.title}
             fill
             priority
-            unoptimized
+            sizes="100vw"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
@@ -71,10 +71,10 @@ export default function RacePage({ params }: RacePageProps) {
                             <div className="flex items-center p-4">
                               <div className="relative h-16 w-16 overflow-hidden rounded-full">
                                 <Image
-                                  src={athlete.photoUrl ? getImageUrl(athlete.photoUrl) : `/placeholder.svg?height=64&width=64&text=${athlete.name.charAt(0)}`}
+                                  src={athlete.photoUrl || `/placeholder.svg?height=64&width=64&text=${athlete.name.charAt(0)}`}
                                   alt={athlete.name}
                                   fill
-                                  unoptimized
+                                  sizes="64px"
                                   className="object-cover"
                                 />
                               </div>
