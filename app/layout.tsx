@@ -12,7 +12,12 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfa
 export const metadata: Metadata = {
   title: "Forster Elite Running Team",
   description: "Professional running team pushing the boundaries of human potential",
-    generator: 'v0.dev'
+  generator: 'v0.dev',
+  icons: {
+    icon: '/Tree3.ico',
+    shortcut: '/Tree3.ico',
+    apple: '/Tree3.png',
+  }
 }
 
 export default function RootLayout({

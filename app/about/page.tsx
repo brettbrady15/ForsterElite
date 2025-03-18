@@ -8,7 +8,7 @@ export default function AboutPage() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[50vh] w-full overflow-hidden">
-        <Image src="/placeholder.svg?height=800&width=1920" alt="Team photo" fill className="object-cover" priority />
+        <Image src="/tree3.png" alt="Team photo" fill className="object-cover opacity-80" priority />
         <div className="absolute inset-0 bg-black/50" />
         <div className="container relative z-10 flex h-full flex-col items-center justify-center text-center text-white">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">About Our Team</h1>

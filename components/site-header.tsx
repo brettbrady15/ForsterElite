@@ -34,7 +34,7 @@ export function SiteHeader() {
       <div className="container flex h-16 items-center justify-between">
         {/* Forster Elite */}
         <Link href="/" className="flex items-center space-x-2">
-          <Image src="/placeholder.svg?height=32&width=32" alt="Logo" width={32} height={32} />
+          <Image src="/Tree3.png" alt="Forster Elite Logo" width={40} height={40} unoptimized />
           <span className="font-serif text-xl tracking-widest font-bold">FORSTER ELITE</span>
         </Link>
         {/* Bar */}
