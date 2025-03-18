@@ -41,8 +41,8 @@ export default function RacesPage() {
                       <div className="grid md:grid-cols-[1fr_2fr]">
                         <div className="relative h-48 overflow-hidden md:h-auto">
                           <Image
-                            src={`/placeholder.svg?height=300&width=400&text=${meet.location}`}
-                            alt={meet.location}
+                            src={meet.imageUrl || `/placeholder.svg?height=300&width=400&text=${meet.location}`}
+                            alt={meet.title}
                             fill
                             className="object-cover transition-transform duration-300 group-hover:scale-105"
                           />
@@ -129,16 +129,26 @@ export default function RacesPage() {
                   {pastMeets.map((meet) => {
                     const meetAthletes = getAthletesForMeet(meet.id);
                     return (
-                      <li key={meet.id} className="border-b pb-4 last:border-0 last:pb-0">
-                        <p className="text-sm text-muted-foreground">{formatMeetDate(meet.date)}</p>
-                        <h4 className="font-medium">{meet.title}</h4>
-                        <div className="mt-1 flex items-center gap-2 text-sm text-muted-foreground">
-                          <Trophy className="h-4 w-4 text-primary" />
-                          <span>{meetAthletes.length > 0 ? meetAthletes[0].name : 'No athletes'}</span>
+                      <li key={meet.id} className="flex border-b pb-4 last:border-0 last:pb-0">
+                        <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-md mr-3">
+                          <Image
+                            src={meet.imageUrl || `/placeholder.svg?height=100&width=100&text=${meet.location}`}
+                            alt={meet.title}
+                            fill
+                            className="object-cover object-center"
+                          />
                         </div>
-                        <Button variant="link" className="mt-1 h-auto p-0 text-sm" asChild>
-                          <Link href={`/races/${meet.id}`}>View Results</Link>
-                        </Button>
+                        <div>
+                          <p className="text-sm text-muted-foreground">{formatMeetDate(meet.date)}</p>
+                          <h4 className="font-medium">{meet.title}</h4>
+                          <div className="mt-1 flex items-center gap-2 text-sm text-muted-foreground">
+                            <Trophy className="h-4 w-4 text-primary" />
+                            <span>{meetAthletes.length > 0 ? meetAthletes[0].name : 'No athletes'}</span>
+                          </div>
+                          <Button variant="link" className="mt-1 h-auto p-0 text-sm" asChild>
+                            <Link href={`/races/${meet.id}`}>View Results</Link>
+                          </Button>
+                        </div>
                       </li>
                     );
                   })}

@@ -28,7 +28,9 @@ export interface Meet {
   title: string;
   location: string;
   description?: string;
+  imageUrl?: string; // Add imageUrl property
   athleteIds: string[]; // IDs of participating athletes
+  websiteUrl?: string;
 }
 
 // Sample athlete data with expanded fields
@@ -104,7 +106,9 @@ export const meets: Meet[] = [
     title: 'Portland Track Festival',
     location: 'Portland, Oregon',
     description: 'Premier track festival hosted in Portland, Oregon.',
-    athleteIds: ['brandon-olden', 'jackson-siddall', 'brett-brady','niko-dworczi']
+    imageUrl: '/meets/portlandTC.jpg',
+    athleteIds: ['brandon-olden', 'jackson-siddall', 'brett-brady','niko-dworczi'],
+    websiteUrl: 'https://www.portlandtrackfestival.com'
   },
   {
     id: 'PU-LC',
@@ -112,15 +116,19 @@ export const meets: Meet[] = [
     title: 'Princeton Last Chance',
     location: 'Princeton, New Jersey',
     description: 'Last Chance Track Meet.',
-    athleteIds: ['brett-brady', 'niko-dworczi']
+    imageUrl: '/meets/princeton.png',
+    athleteIds: ['brett-brady', 'niko-dworczi'],
+    websiteUrl: 'https://www.princetontrack.com'
   },
   {
-    id: 'music-city-track-festival',
+    id: 'MCTC',
     date: '2025-05-30',
     title: 'Music City Track Festival',
     location: 'Nashville, Tennessee',
     description: 'Premier track and field event in Nashville.',
-    athleteIds: ['brandon-olden', 'jackson-siddall', 'brett-brady']
+    imageUrl: '/meets/MCTC.png',
+    athleteIds: ['brandon-olden', 'jackson-siddall', 'brett-brady'],
+    websiteUrl: 'https://www.musiccitytrackfestival.com'
   },
   {
     id: 'lee-university-last-chance',
@@ -128,16 +136,20 @@ export const meets: Meet[] = [
     title: 'Lee University Last Chance',
     location: 'Cleveland, Tennessee',
     description: 'Last chance qualifier meet for championships.',
-    athleteIds: ['brandon-olden', 'brett-brady', 'niko-dworczi']
+    imageUrl: '/meets/leeU.png',
+    athleteIds: ['brandon-olden', 'brett-brady', 'niko-dworczi'],
+    websiteUrl: 'https://www.leeuniversity.edu'
   },
   
   {
-    id: 'cow-harbour-10k',
+    id: 'cow-harbor-10k',
     date: '2025-08-15',
-    title: 'Cow Harbour 10K',
+    title: 'Cow Harbor 10K',
     location: 'Northport, New York',
     description: 'Elite road race through the scenic hills of Northport.',
-    athleteIds: ['jackson-siddall', 'niko-dworczi']
+    imageUrl: '/meets/cowharbor.jfif',
+    athleteIds: ['jackson-siddall', 'brandon-olden', 'brett-brady', 'niko-dworczi'],
+    websiteUrl: 'https://www.cowharbor10k.com'
   },
   {
     id: 'marine-corps-marathon',
@@ -145,7 +157,9 @@ export const meets: Meet[] = [
     title: 'Marine Corps Marathon',
     location: 'Washington, D.C.',
     description: 'One of the largest marathons in the US.',
-    athleteIds: ['brett-brady']
+    imageUrl: '/meets/MCM.png',
+    athleteIds: ['brett-brady'],
+    websiteUrl: 'https://www.marinemarathon.com'
   },
   {
     id: 'indy-monumnet',
@@ -153,7 +167,9 @@ export const meets: Meet[] = [
     title: 'Indianapolis Monumental Marathon',
     location: 'Indianapolis, Indiana',
     description: 'Elite half=marathon focused on fast times.',
-    athleteIds: ['brandon-olden', 'jackson-siddall', 'brett-brady','niko-dworczi']
+    imageUrl: '/meets/indymonumental.jpg',
+    athleteIds: ['brandon-olden', 'jackson-siddall', 'brett-brady','niko-dworczi'],
+    websiteUrl: 'https://www.indymonumental.com'
   }
 ];
 
@@ -201,4 +217,8 @@ export function getMeetsForAthlete(athleteId: string): Meet[] {
 // Format a date for display
 export function formatMeetDate(dateString: string): string {
   return format(parseISO(dateString), 'MMMM d, yyyy');
+}
+
+export function getMeetById(id: string): Meet | undefined {
+  return meets.find(meet => meet.id === id);
 } 

@@ -36,6 +36,73 @@ export default function AboutPage() {
         </div>
       </section>
 
+     
+
+
+      {/* Coaches */}
+      <section className="py-16 md:py-24">
+        <div className="container">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Our Coaching Staff</h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Meet the coaches who guide our athletes to peak performance
+            </p>
+          </div>
+          <div className="mx-auto max-w-4xl">
+            <div className="group overflow-hidden rounded-lg bg-background shadow-sm transition-all hover:shadow-md">
+              <div className="flex flex-col md:flex-row">
+                <div className="relative h-96 w-full md:h-auto md:w-2/5 lg:w-1/2 overflow-hidden">
+                  <Image
+                    src="/athletes/mondo.png"
+                    alt="Mia Forster"
+                    fill
+                    className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6 w-full md:w-3/5 lg:w-1/2">
+                  <h3 className="text-2xl font-bold">Mia Forster</h3>
+                  <p className="text-md text-green-700 font-medium">Head Coach</p>
+                  
+                  <div className="mt-4 space-y-4">
+                    <p className="text-muted-foreground leading-relaxed">
+                      Coach Forster brings a proven record of success at the collegiate and post-collegiate levels. Since taking the helm at Eastern Kentucky University, she has guided the team to three Atlantic Sun Conference titles and secured two NCAA Cross Country Championship appearances. Under her leadership, one of her athletes qualified for the NCAA Track and Field Championships in the 10k, underscoring her ability to develop elite-level talent.
+                    </p>
+                    
+                    <div className="border-t pt-4">
+                      <h4 className="font-semibold text-lg mb-2">Career Highlights</h4>
+                      <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+                        <li>Three-time Atlantic Sun Conference Championship winning coach</li>
+                        <li>Led teams to two NCAA Cross Country Championship appearances</li>
+                        <li>Coached NCAA Track & Field Championship 10k qualifier</li>
+                        <li>Developed multiple All-Conference and Regional athletes</li>
+                        <li>Specializes in distance event training and development</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="border-t pt-4">
+                      <h4 className="font-semibold text-lg mb-2">Coaching Philosophy</h4>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Coach Forster focuses on individualized training approaches that balance competitive excellence with long-term athlete development. Her methodology emphasizes progressive training loads, injury prevention, and mental performance strategies to help athletes reach their full potential.
+                      </p>
+                    </div>
+                    
+                    <div className="border-t pt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                      <div>
+                        <h4 className="font-semibold text-lg mb-2">Contact</h4>
+                        <p className="text-muted-foreground">coach.forster@forsterlite.com</p>
+                      </div>
+                      <Button variant="outline" className="self-start sm:self-auto" asChild>
+                        <Link href="/contact">Get in Touch</Link>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Mission & Values */}
       <section className="bg-muted py-16 md:py-24">
         <div className="container">
@@ -70,72 +137,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-
-      {/* Coaches */}
-      <section className="py-16 md:py-24">
-        <div className="container">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Our Coaching Staff</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Meet the coaches who guide our athletes to peak performance
-            </p>
-          </div>
-          <div className="mx-auto max-w-3xl">
-            <div className="group overflow-hidden rounded-lg bg-background shadow-sm transition-all hover:shadow-md">
-              <div className="md:flex">
-                <div className="relative h-80 md:h-auto md:w-1/3 overflow-hidden">
-                  <Image
-                    src="/placeholder.svg?height=400&width=300&text=Mia Forster"
-                    alt="Mia Forster"
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-6 md:w-2/3">
-                  <h3 className="text-2xl font-bold">Mia Forster</h3>
-                  <p className="text-md text-green-700 font-medium">Head Coach</p>
-                  
-                  <div className="mt-4 space-y-4">
-                    <p className="text-muted-foreground leading-relaxed">
-                      Coach Forster brings a proven record of success at the collegiate and post-collegiate levels. Since taking the helm at Eastern Kentucky University, she has guided the team to three Atlantic Sun Conference titles and secured two NCAA Cross Country Championship appearances. Under her leadership, one of her athletes qualified for the NCAA Track and Field Championships in the 10k, underscoring her ability to develop elite-level talent.
-                    </p>
-                    
-                    <div className="border-t pt-4">
-                      <h4 className="font-semibold text-lg mb-2">Career Highlights</h4>
-                      <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
-                        <li>Three-time Atlantic Sun Conference Championship winning coach</li>
-                        <li>Led teams to two NCAA Cross Country Championship appearances</li>
-                        <li>Coached NCAA Track & Field Championship 10k qualifier</li>
-                        <li>Developed multiple All-Conference and Regional athletes</li>
-                        <li>Specializes in distance event training and development</li>
-                      </ul>
-                    </div>
-                    
-                    <div className="border-t pt-4">
-                      <h4 className="font-semibold text-lg mb-2">Coaching Philosophy</h4>
-                      <p className="text-muted-foreground leading-relaxed">
-                        Coach Forster focuses on individualized training approaches that balance competitive excellence with long-term athlete development. Her methodology emphasizes progressive training loads, injury prevention, and mental performance strategies to help athletes reach their full potential.
-                      </p>
-                    </div>
-                    
-                    <div className="border-t pt-4 flex items-center justify-between">
-                      <div>
-                        <h4 className="font-semibold text-lg mb-2">Contact</h4>
-                        <p className="text-muted-foreground">coach.forster@forsterlite.com</p>
-                      </div>
-                      <Button variant="outline" asChild>
-                        <Link href="/contact">Get in Touch</Link>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Sponsors */}
+      {/* Sponsors 
       <section className="bg-muted py-16 md:py-24">
         <div className="container">
           <div className="mb-12 text-center">
@@ -161,6 +163,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      */}
 
       {/* Call to Action */}
       <section className="bg-primary text-primary-foreground py-16 md:py-24">

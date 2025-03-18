@@ -119,8 +119,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+{/* 
 
-      {/* Sponsors */}
       <section className="bg-muted py-16 md:py-24">
         <div className="container">
           <div className="mb-12 text-center">
@@ -141,7 +141,8 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> 
+      */}
 
       {/* Call to Action */}
       <section className="relative py-16 md:py-24">
