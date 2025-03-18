@@ -4,6 +4,22 @@ import Image from "next/image"
 import Link from "next/link"
 import { getUpcomingMeets, getPastMeets, getAthletesForMeet, formatMeetDate, athletes } from "@/lib/data/meets"
 
+// Hard-coded image paths for each meet to avoid path resolution issues
+const getMeetImagePath = (meetId: string): string => {
+  const imagePaths: Record<string, string> = {
+    'portland-track-festival': '/meets/portlandTC.jpg',
+    'PU-LC': '/meets/princeton.png',
+    'MCTC': '/meets/MCTC.png',
+    'lee-university-last-chance': '/meets/leeU.png',
+    'cow-harbor-10k': '/meets/cowharbor2.jpg',
+    'marine-corps-marathon': '/meets/MCM.png',
+    'indy-monumnet': '/meets/indymonumental.jpg',
+  };
+  
+  // Return the hard-coded path or a fallback placeholder
+  return imagePaths[meetId] || '/placeholder.svg';
+}
+
 export default function RacesPage() {
   // Get upcoming and past meets using our utility functions
   const upcomingMeets = getUpcomingMeets();
@@ -36,12 +52,15 @@ export default function RacesPage() {
                 {upcomingMeets.map((meet, i) => {
                   // Get athletes for this meet
                   const meetAthletes = getAthletesForMeet(meet.id);
+                  // Get hard-coded image path
+                  const imagePath = getMeetImagePath(meet.id);
+                  
                   return (
                     <div key={meet.id} className="group overflow-hidden rounded-lg border transition-all hover:shadow-md">
                       <div className="grid md:grid-cols-[1fr_2fr]">
                         <div className="relative h-48 overflow-hidden md:h-auto">
                           <Image
-                            src={meet.imageUrl || `/placeholder.svg?height=300&width=400&text=${meet.location}`}
+                            src={imagePath}
                             alt={meet.title}
                             fill
                             unoptimized
@@ -129,11 +148,14 @@ export default function RacesPage() {
                 <ul className="mt-4 space-y-4">
                   {pastMeets.map((meet) => {
                     const meetAthletes = getAthletesForMeet(meet.id);
+                    // Get hard-coded image path for past meets
+                    const imagePath = getMeetImagePath(meet.id);
+                    
                     return (
                       <li key={meet.id} className="flex border-b pb-4 last:border-0 last:pb-0">
                         <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-md mr-3">
                           <Image
-                            src={meet.imageUrl || `/placeholder.svg?height=100&width=100&text=${meet.location}`}
+                            src={imagePath}
                             alt={meet.title}
                             fill
                             unoptimized

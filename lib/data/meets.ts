@@ -106,7 +106,7 @@ export const meets: Meet[] = [
     title: 'Portland Track Festival',
     location: 'Portland, Oregon',
     description: 'Premier track festival hosted in Portland, Oregon.',
-    imageUrl: 'public/meets/portlandTC.jpg',
+    imageUrl: '/meets/portlandTC.jpg',
     athleteIds: ['brandon-olden', 'jackson-siddall', 'brett-brady','niko-dworczi'],
     websiteUrl: 'https://www.portlandtrackfestival.com'
   },
@@ -116,7 +116,7 @@ export const meets: Meet[] = [
     title: 'Princeton Last Chance',
     location: 'Princeton, New Jersey',
     description: 'Last Chance Track Meet.',
-    imageUrl: 'public/meets/princeton.png',
+    imageUrl: '/meets/princeton.png',
     athleteIds: ['brett-brady', 'niko-dworczi'],
     websiteUrl: 'https://www.princetontrack.com'
   },
@@ -126,7 +126,7 @@ export const meets: Meet[] = [
     title: 'Music City Track Festival',
     location: 'Nashville, Tennessee',
     description: 'Premier track and field event in Nashville.',
-    imageUrl: 'public/meets/MCTC.png',
+    imageUrl: '/meets/MCTC.png',
     athleteIds: ['brandon-olden', 'jackson-siddall', 'brett-brady'],
     websiteUrl: 'https://www.musiccitytrackfestival.com'
   },
@@ -147,7 +147,7 @@ export const meets: Meet[] = [
     title: 'Cow Harbor 10K',
     location: 'Northport, New York',
     description: 'Elite road race through the scenic hills of Northport.',
-    imageUrl: 'public/meets/cowharbor2.jpg',
+    imageUrl: '/meets/cowharbor2.jpg',
     athleteIds: ['jackson-siddall', 'brandon-olden', 'brett-brady', 'niko-dworczi'],
     websiteUrl: 'https://www.cowharbor10k.com'
   },
@@ -157,7 +157,7 @@ export const meets: Meet[] = [
     title: 'Marine Corps Marathon',
     location: 'Washington, D.C.',
     description: 'One of the largest marathons in the US.',
-    imageUrl: 'public/meets/MCM.png',
+    imageUrl: '/meets/MCM.png',
     athleteIds: ['brett-brady'],
     websiteUrl: 'https://www.marinemarathon.com'
   },
@@ -167,7 +167,7 @@ export const meets: Meet[] = [
     title: 'Indianapolis Monumental Marathon',
     location: 'Indianapolis, Indiana',
     description: 'Elite half=marathon focused on fast times.',
-    imageUrl: 'public/meets/indymonumental.jpg',
+    imageUrl: '/meets/indymonumental.jpg',
     athleteIds: ['brandon-olden', 'jackson-siddall', 'brett-brady','niko-dworczi'],
     websiteUrl: 'https://www.indymonumental.com'
   }

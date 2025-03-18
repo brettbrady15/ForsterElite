@@ -10,6 +10,22 @@ import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
+// Hard-coded image paths for each meet to avoid path resolution issues
+const getMeetImagePath = (meetId: string): string => {
+  const imagePaths: Record<string, string> = {
+    'portland-track-festival': '/meets/portlandTC.jpg',
+    'PU-LC': '/meets/princeton.png',
+    'MCTC': '/meets/MCTC.png',
+    'lee-university-last-chance': '/meets/leeU.png',
+    'cow-harbor-10k': '/meets/cowharbor2.jpg',
+    'marine-corps-marathon': '/meets/MCM.png',
+    'indy-monumnet': '/meets/indymonumental.jpg',
+  };
+  
+  // Return the hard-coded path or a fallback placeholder
+  return imagePaths[meetId] || '/placeholder.svg';
+}
+
 interface RacePageProps {
   params: {
     id: string
@@ -25,6 +41,8 @@ export default function RacePage({ params }: RacePageProps) {
   
   const meetAthletes = getAthletesForMeet(meet.id)
   const meetDate = formatMeetDate(meet.date)
+  // Get hard-coded image path
+  const imagePath = getMeetImagePath(meet.id)
   
   return (
     <main className="flex-1">
@@ -32,7 +50,7 @@ export default function RacePage({ params }: RacePageProps) {
       <section className="relative">
         <div className="relative h-[40vh] w-full overflow-hidden">
           <Image
-            src={meet.imageUrl || `/placeholder.svg?height=500&width=1200&text=${meet.title}`}
+            src={imagePath}
             alt={meet.title}
             fill
             priority
