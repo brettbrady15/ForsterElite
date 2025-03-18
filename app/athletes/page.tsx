@@ -27,24 +27,18 @@ export default function AthletesPage() {
         </div>
       </section>
 
-      {/* Athletes Categories */}
+      {/* Athletes Grid */}
       <section className="py-16 md:py-24">
         <div className="container">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Elite Squad</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Our roster of elite runners competing at the highest levels
-            </p>
-          </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {athletes.map((athlete) => (
               <div key={athlete.id} className="group overflow-hidden rounded-lg bg-background shadow-sm transition-all hover:shadow-md">
-                <div className="relative h-64 w-full overflow-hidden">
+                <div className="relative h-80 w-full overflow-hidden">
                   <Image
                     src={athlete.photoUrl || `/placeholder.svg?height=400&width=300&text=${athlete.name}`}
                     alt={athlete.name}
                     fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-4">
