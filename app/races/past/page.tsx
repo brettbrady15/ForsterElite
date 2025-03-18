@@ -2,25 +2,9 @@ import Image from "next/image"
 import Link from "next/link"
 import { Calendar, ChevronRight, Filter, MapPin, Trophy } from "lucide-react"
 
-import { getPastMeets, formatMeetDate, getAthletesForMeet } from "@/lib/data/meets"
+import { getPastMeets, formatMeetDate, getAthletesForMeet, getImageUrl } from "@/lib/data/meets"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-
-// Hard-coded image paths for each meet to avoid path resolution issues
-const getMeetImagePath = (meetId: string): string => {
-  const imagePaths: Record<string, string> = {
-    'portland-track-festival': '/meets/portlandTC.jpg',
-    'PU-LC': '/meets/princeton.png',
-    'MCTC': '/meets/MCTC.png',
-    'lee-university-last-chance': '/meets/leeU.png',
-    'cow-harbor-10k': '/meets/cowharbor2.jpg',
-    'marine-corps-marathon': '/meets/MCM.png',
-    'indy-monumnet': '/meets/indymonumental.jpg',
-  };
-  
-  // Return the hard-coded path or a fallback placeholder
-  return imagePaths[meetId] || '/placeholder.svg';
-}
 
 export default function PastRacesPage() {
   const pastMeets = getPastMeets()
@@ -43,15 +27,12 @@ export default function PastRacesPage() {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {pastMeets.map((meet) => {
               const meetAthletes = getAthletesForMeet(meet.id)
-              // Get hard-coded image path
-              const imagePath = getMeetImagePath(meet.id)
-              
               return (
                 <Link key={meet.id} href={`/races/${meet.id}`} className="group">
                   <Card className="h-full overflow-hidden transition-all hover:shadow-md">
                     <div className="relative h-48 overflow-hidden">
                       <Image
-                        src={imagePath}
+                        src={meet.imageUrl ? getImageUrl(meet.imageUrl) : `/placeholder.svg?height=300&width=400&text=${meet.location}`}
                         alt={meet.title}
                         fill
                         unoptimized

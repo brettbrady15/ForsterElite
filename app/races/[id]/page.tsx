@@ -4,27 +4,11 @@ import { notFound } from "next/navigation"
 import { Calendar, Globe, MapPin, Trophy, Users } from "lucide-react"
 import { parseISO } from "date-fns"
 
-import { formatMeetDate, getMeetById, getAthletesForMeet } from "@/lib/data/meets"
+import { formatMeetDate, getMeetById, getAthletesForMeet, getImageUrl } from "@/lib/data/meets"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-
-// Hard-coded image paths for each meet to avoid path resolution issues
-const getMeetImagePath = (meetId: string): string => {
-  const imagePaths: Record<string, string> = {
-    'portland-track-festival': '/meets/portlandTC.jpg',
-    'PU-LC': '/meets/princeton.png',
-    'MCTC': '/meets/MCTC.png',
-    'lee-university-last-chance': '/meets/leeU.png',
-    'cow-harbor-10k': '/meets/cowharbor2.jpg',
-    'marine-corps-marathon': '/meets/MCM.png',
-    'indy-monumnet': '/meets/indymonumental.jpg',
-  };
-  
-  // Return the hard-coded path or a fallback placeholder
-  return imagePaths[meetId] || '/placeholder.svg';
-}
 
 interface RacePageProps {
   params: {
@@ -41,8 +25,6 @@ export default function RacePage({ params }: RacePageProps) {
   
   const meetAthletes = getAthletesForMeet(meet.id)
   const meetDate = formatMeetDate(meet.date)
-  // Get hard-coded image path
-  const imagePath = getMeetImagePath(meet.id)
   
   return (
     <main className="flex-1">
@@ -50,7 +32,7 @@ export default function RacePage({ params }: RacePageProps) {
       <section className="relative">
         <div className="relative h-[40vh] w-full overflow-hidden">
           <Image
-            src={imagePath}
+            src={meet.imageUrl ? getImageUrl(meet.imageUrl) : `/placeholder.svg?height=500&width=1200&text=${meet.title}`}
             alt={meet.title}
             fill
             priority
@@ -89,7 +71,7 @@ export default function RacePage({ params }: RacePageProps) {
                             <div className="flex items-center p-4">
                               <div className="relative h-16 w-16 overflow-hidden rounded-full">
                                 <Image
-                                  src={athlete.photoUrl || `/placeholder.svg?height=64&width=64&text=${athlete.name.charAt(0)}`}
+                                  src={athlete.photoUrl ? getImageUrl(athlete.photoUrl) : `/placeholder.svg?height=64&width=64&text=${athlete.name.charAt(0)}`}
                                   alt={athlete.name}
                                   fill
                                   unoptimized

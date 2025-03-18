@@ -1,5 +1,8 @@
 import { format, isBefore, isAfter, parseISO } from 'date-fns';
 
+// Define base URL for assets
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || '';
+
 // Define types for our meet data
 export interface Athlete {
   id: string;
@@ -221,4 +224,13 @@ export function formatMeetDate(dateString: string): string {
 
 export function getMeetById(id: string): Meet | undefined {
   return meets.find(meet => meet.id === id);
+}
+
+// Helper function to get full image URL
+export function getImageUrl(path: string): string {
+  // For local development, use relative path
+  if (!BASE_URL) return path;
+  
+  // For production, use absolute URL
+  return `${BASE_URL}${path}`;
 } 
